@@ -62,6 +62,7 @@ abstract class GridQuery extends Base implements DisplayEventInterface
     {
         $this->getGridDataQuery();
         $results  = $this->runQuery();
+
         $name_key = $this->query->getModelRegistry('name_key');
 
         $grid_items = array();
@@ -157,6 +158,8 @@ abstract class GridQuery extends Base implements DisplayEventInterface
             $check_view_level_access = 1,
             $get_item_children = 0
         );
+
+        $this->query->setModelRegistry('criteria_extension_instance_id', 0);
 
         $this->getGridDataQueryWhere();
 
